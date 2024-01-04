@@ -10,6 +10,12 @@ function PassGen(){
             position: toast.POSITION.TOP_CENTER
           });
         }
+
+        const success= (text)=>{
+            toast.success(text, {
+                position: toast.POSITION.TOP_CENTER
+              });
+        }
     
 
     let UPPERCASE ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -81,6 +87,16 @@ function PassGen(){
         }
        }
 
+       function copyTxt(){
+        let set= password;
+        // console.log(set);
+        if(set==""){
+            notify("There is an Empty Input");
+        }else{
+            navigator.clipboard.writeText(set);
+            success("Successfully Copied😎")
+        }
+       }
 
     return(
         <div className="container">
@@ -88,6 +104,7 @@ function PassGen(){
            <h1 className="center">Password Generator</h1>
            <div className="firstInp">
             <input type="text" value={password} className="forWidth" disabled/>  
+            <i onClick={copyTxt} className="ri-file-copy-2-fill icon"></i>
            </div>
 
            <div className="main">
