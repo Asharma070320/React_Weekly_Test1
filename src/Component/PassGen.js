@@ -63,11 +63,14 @@ function PassGen(){
         }else{
             if(upperTxt){
                 takeValue+=UPPERCASE;
-            }else if(lowerTxt){
+            }
+            if(lowerTxt){
                 takeValue+=LOWERCASE;
-            }else if (numberTxt){
+            }
+            if(numberTxt){
                 takeValue+=NUMBS;
-            }else if(symbolTxt){
+            }
+            if(symbolTxt){
                 takeValue+=SYMBS;
             }
             displayPass(takeValue);
